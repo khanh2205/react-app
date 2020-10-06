@@ -31,7 +31,11 @@ const useStyles = makeStyles((theme) => ({
 
 const Body = (user) => {
 	const classes = useStyles();
-	console.log(user);
+
+	const setUser = (row)=> {
+		// console.log(row);
+	};
+
 	return (
 		<div className={classes.root}>
 			<Grid container spacing={3}>
@@ -48,14 +52,14 @@ const Body = (user) => {
 								</TableRow>
 							</TableHead>
 							<TableBody>
-							{user.map((row) => (
+							{user.data && user.data.map((row) => (
 								<TableRow key={row.name}>
 									<TableCell component="th" scope="row">
 										{row.name}
 									</TableCell>
 									<TableCell align="right">{row.email}</TableCell>
 									<TableCell align="right">
-										<Button size="small" variant="contained" color="primary">
+										<Button size="small" variant="contained" color="primary" onClick={setUser(row)}>
 											<EditIcon />
 										</Button>
 									</TableCell>

@@ -15,6 +15,10 @@ const useStyles = makeStyles({
 
 const Header = () => {
 	const classes = useStyles();
+	
+	const state={
+		curTime : new Date().toLocaleString(),	
+	};
 
 	return (
 		<Card className={classes.root} variant="outlined">
@@ -23,7 +27,7 @@ const Header = () => {
 					Header
 				</Typography>
 				<Typography className={classes.title} color="textSecondary" gutterBottom>
-					Time
+					{state.curTime}
 				</Typography>
 			</CardContent>
 		</Card>
